@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 160" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ftBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090D1A"/>
+      <stop offset="100%" stop-color="#030509"/>
+    </linearGradient>
+    <linearGradient id="ftBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#A855F7"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <pattern id="ftGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1E293B" stroke-width="0.5" stroke-opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <style>
+    @keyframes pulseBlink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .term-msg {
+      font-family: ui-monospace, SFMono-Regular, Consolas, 'Fira Code', monospace;
+      font-size: 11px;
+      fill: #38BDF8;
+      letter-spacing: 1px;
+    }
+    .term-code {
+      font-family: ui-monospace, SFMono-Regular, Consolas, 'Fira Code', monospace;
+      font-size: 10px;
+      fill: #94A3B8;
+      letter-spacing: 1px;
+    }
+    .term-cursor {
+      animation: pulseBlink 1s infinite;
+      fill: #38BDF8;
+    }
+    .connect-head {
+      font-family: ui-monospace, SFMono-Regular, Consolas, 'Fira Code', monospace;
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: 2px;
+      fill: #F8FAFC;
+    }
+  </style>
+
+  <rect width="850" height="160" rx="10" fill="url(#ftBg)"/>
+  <rect width="850" height="160" rx="10" fill="url(#ftGrid)"/>
+  <rect width="848" height="158" x="1" y="1" rx="9" fill="none" stroke="#334155" stroke-width="1.5"/>
+
+  <!-- Easter Egg Terminal Box -->
+  <rect x="35" y="22" width="780" height="65" rx="6" fill="#060913" stroke="#1E293B" stroke-width="1"/>
+  
+  <text x="55" y="45" class="term-msg">&gt; system.message: <tspan fill="#F8FAFC">The next idea is already loading...</tspan></text>
+  
+  <text x="55" y="68" class="term-code">
+    BUILDING <tspan fill="#38BDF8">████████████████████</tspan><tspan fill="#334155">░░░░</tspan> <tspan fill="#10B981">87%</tspan> <tspan class="term-cursor">█</tspan>
+  </text>
+
+  <!-- Connect Header -->
+  <line x1="35" y1="108" x2="815" y2="108" stroke="#1E293B" stroke-width="1"/>
+  <text x="425" y="133" class="connect-head" text-anchor="middle">⚡ CONNECT TO THE SYSTEM ⚡</text>
+</svg>

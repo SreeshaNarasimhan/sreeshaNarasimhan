@@ -1,0 +1,217 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <radialGradient id="spaceBg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="40%" stop-color="#090D1A"/>
+      <stop offset="100%" stop-color="#03050B"/>
+    </radialGradient>
+
+    <!-- Core Glow -->
+    <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#A855F7" stop-opacity="0.7"/>
+      <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Node Glow -->
+    <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="galaxyGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1E293B" stroke-width="0.5" stroke-opacity="0.3"/>
+      <circle cx="40" cy="40" r="1" fill="#334155" opacity="0.3"/>
+    </pattern>
+
+    <!-- Line Gradients -->
+    <linearGradient id="lineGradCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    @keyframes rotateOrbit {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes reverseOrbit {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
+    }
+    @keyframes signalFlow {
+      0% { stroke-dashoffset: 60; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes nodePulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.15); opacity: 0.8; }
+    }
+    @keyframes corePulse {
+      0%, 100% { filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.8)); }
+      50% { filter: drop-shadow(0 0 30px rgba(56, 189, 248, 0.9)); }
+    }
+
+    .orbit-ring-1 {
+      animation: rotateOrbit 40s linear infinite;
+      transform-origin: 425px 210px;
+    }
+    .orbit-ring-2 {
+      animation: reverseOrbit 60s linear infinite;
+      transform-origin: 425px 210px;
+    }
+    .signal-line {
+      stroke-dasharray: 6 6;
+      animation: signalFlow 2s linear infinite;
+    }
+    .core-node {
+      animation: corePulse 3s infinite ease-in-out;
+    }
+    .node-group {
+      transition: transform 0.3s ease;
+    }
+    .node-symbol {
+      font-family: ui-monospace, SFMono-Regular, Consolas, 'Fira Code', monospace;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 1px;
+      fill: #F8FAFC;
+    }
+    .sub-symbol {
+      font-family: ui-monospace, SFMono-Regular, Consolas, 'Fira Code', monospace;
+      font-size: 8.5px;
+      fill: #38BDF8;
+      letter-spacing: 0.5px;
+    }
+  </style>
+
+  <!-- Base Canvas -->
+  <rect width="850" height="420" rx="12" fill="url(#spaceBg)"/>
+  <rect width="850" height="420" rx="12" fill="url(#galaxyGrid)"/>
+  <rect width="848" height="418" x="1" y="1" rx="11" fill="none" stroke="#334155" stroke-width="1.5" opacity="0.7"/>
+
+  <!-- Outer Header Label -->
+  <text x="35" y="32" font-family="ui-monospace, monospace" font-size="11" fill="#94A3B8" letter-spacing="2">SYSTEM MATRIX // NEURAL GALAXY TOPOLOGY</text>
+  <text x="815" y="32" font-family="ui-monospace, monospace" font-size="10" fill="#10B981" text-anchor="end">NODE MESH: ACTIVE (7/7)</text>
+
+  <!-- Orbital Rings -->
+  <ellipse cx="425" cy="210" rx="280" ry="140" fill="none" stroke="#1E293B" stroke-width="1.5" stroke-dasharray="4 8" class="orbit-ring-1"/>
+  <ellipse cx="425" cy="210" rx="190" ry="95" fill="none" stroke="#334155" stroke-width="1" stroke-dasharray="2 6" class="orbit-ring-2"/>
+  
+  <!-- Central Core Ambient Aura -->
+  <circle cx="425" cy="210" r="110" fill="url(#coreGlow)"/>
+
+  <!-- Connection Lines (Center to Nodes) -->
+  <!-- 1. Center to LLMs (425, 75) -->
+  <line x1="425" y1="210" x2="425" y2="75" stroke="url(#lineGradCyan)" stroke-width="2" class="signal-line"/>
+  
+  <!-- 2. Center to AI AGENTS (640, 110) -->
+  <line x1="425" y1="210" x2="640" y2="110" stroke="url(#lineGradCyan)" stroke-width="2" class="signal-line"/>
+  
+  <!-- 3. Center to FULL STACK AI (710, 220) -->
+  <line x1="425" y1="210" x2="710" y2="220" stroke="url(#lineGradCyan)" stroke-width="2" class="signal-line"/>
+
+  <!-- 4. Center to ML (610, 335) -->
+  <line x1="425" y1="210" x2="610" y2="335" stroke="url(#lineGradCyan)" stroke-width="2" class="signal-line"/>
+
+  <!-- 5. Center to NLP (240, 335) -->
+  <line x1="425" y1="210" x2="240" y2="335" stroke="url(#lineGradCyan)" stroke-width="2" class="signal-line"/>
+
+  <!-- 6. Center to COMPUTER VISION (140, 220) -->
+  <line x1="425" y1="210" x2="140" y2="220" stroke="url(#lineGradCyan)" stroke-width="2" class="signal-line"/>
+
+  <!-- 7. Center to GENAI (210, 110) -->
+  <line x1="425" y1="210" x2="210" y2="110" stroke="url(#lineGradCyan)" stroke-width="2" class="signal-line"/>
+
+  <!-- Inter-Node Neural Mesh Mesh Connections -->
+  <line x1="210" y1="110" x2="425" y2="75" stroke="#334155" stroke-width="1" opacity="0.5"/>
+  <line x1="425" y1="75" x2="640" y2="110" stroke="#334155" stroke-width="1" opacity="0.5"/>
+  <line x1="640" y1="110" x2="710" y2="220" stroke="#334155" stroke-width="1" opacity="0.5"/>
+  <line x1="710" y1="220" x2="610" y2="335" stroke="#334155" stroke-width="1" opacity="0.5"/>
+  <line x1="610" y1="335" x2="240" y2="335" stroke="#334155" stroke-width="1" opacity="0.5"/>
+  <line x1="240" y1="335" x2="140" y2="220" stroke="#334155" stroke-width="1" opacity="0.5"/>
+  <line x1="140" y1="220" x2="210" y2="110" stroke="#334155" stroke-width="1" opacity="0.5"/>
+  <line x1="210" y1="110" x2="240" y2="335" stroke="#334155" stroke-width="1" opacity="0.3" stroke-dasharray="3 3"/>
+  <line x1="640" y1="110" x2="610" y2="335" stroke="#334155" stroke-width="1" opacity="0.3" stroke-dasharray="3 3"/>
+
+  <!-- ================= NODES ================= -->
+
+  <!-- NODE 1: LLMs (425, 75) -->
+  <g class="node-group">
+    <circle cx="425" cy="75" r="24" fill="#090D1A" stroke="#38BDF8" stroke-width="2"/>
+    <circle cx="425" cy="75" r="30" fill="none" stroke="#38BDF8" stroke-width="1" opacity="0.4"/>
+    <text x="425" y="79" class="node-symbol" text-anchor="middle">LLMs</text>
+    <rect x="365" y="32" width="120" height="18" rx="4" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+    <text x="425" y="44" class="sub-symbol" text-anchor="middle">LARGE LANGUAGES</text>
+  </g>
+
+  <!-- NODE 2: AI AGENTS (640, 110) -->
+  <g class="node-group">
+    <circle cx="640" cy="110" r="24" fill="#090D1A" stroke="#A855F7" stroke-width="2"/>
+    <circle cx="640" cy="110" r="30" fill="none" stroke="#A855F7" stroke-width="1" opacity="0.4"/>
+    <text x="640" y="114" class="node-symbol" text-anchor="middle">AGENTS</text>
+    <rect x="680" y="101" width="115" height="18" rx="4" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+    <text x="737" y="113" class="sub-symbol" text-anchor="middle">AUTONOMOUS SYS</text>
+  </g>
+
+  <!-- NODE 3: FULL STACK AI (710, 220) -->
+  <g class="node-group">
+    <circle cx="710" cy="220" r="24" fill="#090D1A" stroke="#EC4899" stroke-width="2"/>
+    <circle cx="710" cy="220" r="30" fill="none" stroke="#EC4899" stroke-width="1" opacity="0.4"/>
+    <text x="710" y="224" class="node-symbol" text-anchor="middle">FULL-STACK</text>
+    <rect x="650" y="258" width="120" height="18" rx="4" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+    <text x="710" y="270" class="sub-symbol" text-anchor="middle">END-TO-END APPS</text>
+  </g>
+
+  <!-- NODE 4: MACHINE LEARNING (610, 335) -->
+  <g class="node-group">
+    <circle cx="610" cy="335" r="24" fill="#090D1A" stroke="#38BDF8" stroke-width="2"/>
+    <circle cx="610" cy="335" r="30" fill="none" stroke="#38BDF8" stroke-width="1" opacity="0.4"/>
+    <text x="610" y="339" class="node-symbol" text-anchor="middle">ML</text>
+    <rect x="555" y="372" width="110" height="18" rx="4" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+    <text x="610" y="384" class="sub-symbol" text-anchor="middle">CORE ALGORITHMS</text>
+  </g>
+
+  <!-- NODE 5: NLP (240, 335) -->
+  <g class="node-group">
+    <circle cx="240" cy="335" r="24" fill="#090D1A" stroke="#8B5CF6" stroke-width="2"/>
+    <circle cx="240" cy="335" r="30" fill="none" stroke="#8B5CF6" stroke-width="1" opacity="0.4"/>
+    <text x="240" y="339" class="node-symbol" text-anchor="middle">NLP</text>
+    <rect x="185" y="372" width="110" height="18" rx="4" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+    <text x="240" y="384" class="sub-symbol" text-anchor="middle">TEXT &amp; SPEECH</text>
+  </g>
+
+  <!-- NODE 6: COMPUTER VISION (140, 220) -->
+  <g class="node-group">
+    <circle cx="140" cy="220" r="24" fill="#090D1A" stroke="#06B6D4" stroke-width="2"/>
+    <circle cx="140" cy="220" r="30" fill="none" stroke="#06B6D4" stroke-width="1" opacity="0.4"/>
+    <text x="140" y="224" class="node-symbol" text-anchor="middle">VISION</text>
+    <rect x="80" y="258" width="120" height="18" rx="4" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+    <text x="140" y="270" class="sub-symbol" text-anchor="middle">SPATIAL &amp; MEDIAPIPE</text>
+  </g>
+
+  <!-- NODE 7: GENAI (210, 110) -->
+  <g class="node-group">
+    <circle cx="210" cy="110" r="24" fill="#090D1A" stroke="#38BDF8" stroke-width="2"/>
+    <circle cx="210" cy="110" r="30" fill="none" stroke="#38BDF8" stroke-width="1" opacity="0.4"/>
+    <text x="210" y="114" class="node-symbol" text-anchor="middle">GEN AI</text>
+    <rect x="55" y="101" width="115" height="18" rx="4" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+    <text x="112" y="113" class="sub-symbol" text-anchor="middle">SYNTHETIC MEDIA</text>
+  </g>
+
+  <!-- CENTER CORE: SREESHA AI CORE -->
+  <g class="core-node">
+    <!-- Outer Rings -->
+    <circle cx="425" cy="210" r="54" fill="#090D1A" stroke="#A855F7" stroke-width="2.5"/>
+    <circle cx="425" cy="210" r="46" fill="none" stroke="#38BDF8" stroke-width="1.5" stroke-dasharray="8 4"/>
+    <circle cx="425" cy="210" r="38" fill="#0F172A" stroke="#EC4899" stroke-width="1"/>
+    
+    <!-- Text Inside Center -->
+    <text x="425" y="205" font-family="ui-monospace, monospace" font-weight="900" font-size="13" fill="#F8FAFC" text-anchor="middle" letter-spacing="2">SREESHA</text>
+    <text x="425" y="222" font-family="ui-monospace, monospace" font-size="9" fill="#38BDF8" text-anchor="middle" letter-spacing="1.5">AI CORE</text>
+  </g>
+
+</svg>

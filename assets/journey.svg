@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="evBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090D1A"/>
+      <stop offset="100%" stop-color="#05070E"/>
+    </linearGradient>
+    <linearGradient id="linePulse" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#A855F7"/>
+      <stop offset="100%" stop-color="#EC4899"/>
+    </linearGradient>
+    <pattern id="evGrid" width="25" height="25" patternUnits="userSpaceOnUse">
+      <path d="M 25 0 L 0 0 0 25" fill="none" stroke="#1E293B" stroke-width="0.5" stroke-opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <style>
+    @keyframes nodePulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.7; }
+    }
+    .ev-title {
+      font-family: ui-monospace, SFMono-Regular, Consolas, 'Fira Code', monospace;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 2px;
+      fill: #38BDF8;
+    }
+    .step-label {
+      font-family: ui-monospace, SFMono-Regular, Consolas, 'Fira Code', monospace;
+      font-size: 9.5px;
+      font-weight: 700;
+      fill: #F8FAFC;
+    }
+    .step-sub {
+      font-family: ui-monospace, SFMono-Regular, Consolas, 'Fira Code', monospace;
+      font-size: 8px;
+      fill: #94A3B8;
+    }
+    .pulse-node {
+      animation: nodePulse 2.5s infinite ease-in-out;
+      transform-origin: center;
+    }
+  </style>
+
+  <rect width="850" height="240" rx="10" fill="url(#evBg)"/>
+  <rect width="850" height="240" rx="10" fill="url(#evGrid)"/>
+  <rect width="848" height="238" x="1" y="1" rx="9" fill="none" stroke="#334155" stroke-width="1.5"/>
+
+  <!-- Title Line -->
+  <text x="35" y="32" class="ev-title">SYSTEM EVOLUTION // TRAJECTORY PIPELINE</text>
+  <text x="815" y="32" font-family="ui-monospace, monospace" font-size="10" fill="#10B981" text-anchor="end">STATUS: EVOLVING</text>
+
+  <!-- Snake / Multi-row Progression Path -->
+  <!-- Top Row Line -->
+  <line x1="80" y1="85" x2="770" y2="85" stroke="url(#linePulse)" stroke-width="3"/>
+  
+  <!-- Connector Drop Line -->
+  <path d="M 770 85 Q 810 85 810 132.5 T 770 180" fill="none" stroke="url(#linePulse)" stroke-width="3"/>
+
+  <!-- Bottom Row Line -->
+  <line x1="770" y1="180" x2="80" y2="180" stroke="url(#linePulse)" stroke-width="3"/>
+
+  <!-- ROW 1 NODES -->
+  <!-- Step 1: AI & DS -->
+  <g transform="translate(80, 85)">
+    <circle cx="0" cy="0" r="10" fill="#090D1A" stroke="#38BDF8" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="4" fill="#38BDF8" class="pulse-node"/>
+    <text x="0" y="-18" class="step-label" text-anchor="middle">AI &amp; DS</text>
+    <text x="0" y="25" class="step-sub" text-anchor="middle">B.Tech Base</text>
+  </g>
+
+  <!-- Step 2: PROJECTS -->
+  <g transform="translate(250, 85)">
+    <circle cx="0" cy="0" r="10" fill="#090D1A" stroke="#38BDF8" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="4" fill="#38BDF8" class="pulse-node"/>
+    <text x="0" y="-18" class="step-label" text-anchor="middle">PROJECTS</text>
+    <text x="0" y="25" class="step-sub" text-anchor="middle">Full-Stack AI</text>
+  </g>
+
+  <!-- Step 3: INTERNSHIPS -->
+  <g transform="translate(420, 85)">
+    <circle cx="0" cy="0" r="10" fill="#090D1A" stroke="#8B5CF6" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="4" fill="#8B5CF6" class="pulse-node"/>
+    <text x="0" y="-18" class="step-label" text-anchor="middle">INTERNSHIPS</text>
+    <text x="0" y="25" class="step-sub" text-anchor="middle">Industry Practice</text>
+  </g>
+
+  <!-- Step 4: GENAI / LLM -->
+  <g transform="translate(590, 85)">
+    <circle cx="0" cy="0" r="10" fill="#090D1A" stroke="#A855F7" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="4" fill="#A855F7" class="pulse-node"/>
+    <text x="0" y="-18" class="step-label" text-anchor="middle">GENAI / LLMs</text>
+    <text x="0" y="25" class="step-sub" text-anchor="middle">RAG &amp; Fine-tuning</text>
+  </g>
+
+  <!-- Step 5: AI AGENTS -->
+  <g transform="translate(760, 85)">
+    <circle cx="0" cy="0" r="10" fill="#090D1A" stroke="#EC4899" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="4" fill="#EC4899" class="pulse-node"/>
+    <text x="0" y="-18" class="step-label" text-anchor="middle">AI AGENTS</text>
+    <text x="0" y="25" class="step-sub" text-anchor="middle">Autonomous Systems</text>
+  </g>
+
+  <!-- ROW 2 NODES (Right to Left) -->
+  <!-- Step 6: GOOGLE AMBASSADOR -->
+  <g transform="translate(680, 180)">
+    <circle cx="0" cy="0" r="10" fill="#090D1A" stroke="#4285F4" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="4" fill="#4285F4" class="pulse-node"/>
+    <text x="0" y="-18" class="step-label" text-anchor="middle" fill="#60A5FA">GOOGLE AMBASSADOR</text>
+    <text x="0" y="25" class="step-sub" text-anchor="middle">Bronze Batch</text>
+  </g>
+
+  <!-- Step 7: HACKATHONS -->
+  <g transform="translate(480, 180)">
+    <circle cx="0" cy="0" r="10" fill="#090D1A" stroke="#F59E0B" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="4" fill="#F59E0B" class="pulse-node"/>
+    <text x="0" y="-18" class="step-label" text-anchor="middle">HACKATHONS</text>
+    <text x="0" y="25" class="step-sub" text-anchor="middle">Competitive Build</text>
+  </g>
+
+  <!-- Step 8: AI PRODUCTS -->
+  <g transform="translate(280, 180)">
+    <circle cx="0" cy="0" r="10" fill="#090D1A" stroke="#10B981" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="4" fill="#10B981" class="pulse-node"/>
+    <text x="0" y="-18" class="step-label" text-anchor="middle" fill="#34D399">AI PRODUCTS</text>
+    <text x="0" y="25" class="step-sub" text-anchor="middle">User-Facing Systems</text>
+  </g>
+
+  <!-- Step 9: AI FOUNDER -->
+  <g transform="translate(80, 180)">
+    <circle cx="0" cy="0" r="12" fill="#090D1A" stroke="#38BDF8" stroke-width="3"/>
+    <circle cx="0" cy="0" r="5" fill="#38BDF8" class="pulse-node"/>
+    <text x="0" y="-18" class="step-label" text-anchor="middle" fill="#38BDF8" font-weight="900">AI FOUNDER</text>
+    <text x="0" y="25" class="step-sub" text-anchor="middle">Future Goal</text>
+  </g>
+
+</svg>

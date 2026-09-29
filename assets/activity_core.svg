@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 140" width="100%" height="100%">
+  <defs>
+    <linearGradient id="actBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090D1A"/>
+      <stop offset="100%" stop-color="#05070E"/>
+    </linearGradient>
+    <pattern id="actGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1E293B" stroke-width="0.5" stroke-opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <style>
+    @keyframes pulseAct {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 0.3; }
+    }
+    .act-title {
+      font-family: ui-monospace, SFMono-Regular, Consolas, 'Fira Code', monospace;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 2px;
+      fill: #38BDF8;
+    }
+    .metric-num {
+      font-family: ui-monospace, SFMono-Regular, Consolas, 'Fira Code', monospace;
+      font-weight: 800;
+      font-size: 20px;
+      fill: #F8FAFC;
+    }
+    .metric-lbl {
+      font-family: ui-monospace, SFMono-Regular, Consolas, 'Fira Code', monospace;
+      font-size: 9px;
+      fill: #94A3B8;
+      letter-spacing: 1px;
+    }
+    .live-dot {
+      animation: pulseAct 1.8s infinite ease-in-out;
+    }
+  </style>
+
+  <rect width="850" height="140" rx="10" fill="url(#actBg)"/>
+  <rect width="850" height="140" rx="10" fill="url(#actGrid)"/>
+  <rect width="848" height="138" x="1" y="1" rx="9" fill="none" stroke="#334155" stroke-width="1.5"/>
+
+  <!-- Title line -->
+  <text x="35" y="30" class="act-title">ACTIVITY CORE // TELEMETRY &amp; EXPERIMENTS</text>
+  <circle cx="715" cy="26" r="4" fill="#10B981" class="live-dot"/>
+  <text x="815" y="30" font-family="ui-monospace, monospace" font-size="10" fill="#10B981" text-anchor="end">LIVE FEED</text>
+
+  <line x1="35" y1="42" x2="815" y2="42" stroke="#1E293B" stroke-width="1"/>
+
+  <!-- 4 Telemetry Modules -->
+  <!-- Module 1: CONTRIBUTIONS -->
+  <g transform="translate(35, 55)">
+    <rect width="175" height="65" rx="6" fill="#0F172A" stroke="#38BDF8" stroke-width="1"/>
+    <text x="87.5" y="32" class="metric-num" text-anchor="middle" fill="#38BDF8">ACTIVE</text>
+    <text x="87.5" y="52" class="metric-lbl" text-anchor="middle">CONTRIBUTIONS</text>
+  </g>
+
+  <!-- Module 2: AI PROJECTS -->
+  <g transform="translate(230, 55)">
+    <rect width="175" height="65" rx="6" fill="#0F172A" stroke="#A855F7" stroke-width="1"/>
+    <text x="87.5" y="32" class="metric-num" text-anchor="middle" fill="#C084FC">SYSTEMS</text>
+    <text x="87.5" y="52" class="metric-lbl" text-anchor="middle">DEPLOYED PROJECTS</text>
+  </g>
+
+  <!-- Module 3: CORE LANGUAGES -->
+  <g transform="translate(425, 55)">
+    <rect width="175" height="65" rx="6" fill="#0F172A" stroke="#EC4899" stroke-width="1"/>
+    <text x="87.5" y="32" class="metric-num" text-anchor="middle" fill="#F43F5E">PYTHON+</text>
+    <text x="87.5" y="52" class="metric-lbl" text-anchor="middle">PRIMARY STACK</text>
+  </g>
+
+  <!-- Module 4: AGENT EXPERIMENTS -->
+  <g transform="translate(620, 55)">
+    <rect width="195" height="65" rx="6" fill="#0F172A" stroke="#10B981" stroke-width="1"/>
+    <text x="97.5" y="32" class="metric-num" text-anchor="middle" fill="#34D399">CONTINUOUS</text>
+    <text x="97.5" y="52" class="metric-lbl" text-anchor="middle">AI AGENT EXPERIMENTS</text>
+  </g>
+</svg>
